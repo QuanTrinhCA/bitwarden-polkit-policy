@@ -18,8 +18,8 @@ ExcludeArch:    s390 s390x
 %setup -q
 
 %install
-install -p -d -o root -g root -m 0755 %{buildroot}%{_datadir}/polkit-1/actions
-install -p -o root -g root -m 0644 com.bitwarden.Bitwarden.policy %{buildroot}%{_datadir}/polkit-1/actions/com.bitwarden.Bitwarden.policy
+install -p -d -m 0755 %{buildroot}%{_datadir}/polkit-1/actions
+install -p -m 0644 com.bitwarden.Bitwarden.policy %{buildroot}%{_datadir}/polkit-1/actions/com.bitwarden.Bitwarden.policy
 chcon system_u:object_r:usr_t:s0 %{buildroot}%{_datadir}/polkit-1/actions/com.bitwarden.Bitwarden.policy
 
 %files
