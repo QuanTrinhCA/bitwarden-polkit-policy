@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           bitwarden-polkit-policy
 
 Version:        1.0
