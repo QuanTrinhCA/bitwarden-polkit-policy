@@ -8,14 +8,14 @@ Obsoletes:      %{name} < %{version}
 
 License:        GPL-3.0
 URL:            https://github.com/bitwarden/clients/blob/main/apps/desktop/src/key-management/biometrics/biometric.unix.main.ts
-Source0:        
+Source0:        https://github.com/QuanTrinhCA/bitwarden-polkit-policy/archive/refs/tags/%{version}.tar.gz
 ExcludeArch:    s390 s390x
 
 %description
 %{name} installs Bitwarden Polkit Policy into /usr/share/polkit-1/actions which is restricted for immutable distros such as Fedora Kinoite.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %install
 install -p -d -o root -g root -m 0755 %{buildroot}%{_datadir}/polkit-1/actions
